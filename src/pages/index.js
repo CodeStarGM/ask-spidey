@@ -15,7 +15,7 @@ export default function Home() {
 
   const handleFetchBotResponse = async () => {
     const { data } = await axios.post(
-      "http://localhost:3000/api/openai",
+      "/api/openai",
       { message },
       {
         headers: {
