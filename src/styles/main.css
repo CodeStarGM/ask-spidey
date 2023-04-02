@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+body {
+  background-color: #1c1c25;
+  font-family: "Roboto", sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  display: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #262631;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #21212c;
+}
+
+.chatBubbleBot {
+  background: linear-gradient(269deg, #b11313 1.77%, #df1f2d 99.15%);
+}
+
+.fonto {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+/* SPIDER */
+
+/* Bonus */
+.lureSpidey:hover ~ .spider {
+  top: 0;
+}
+
+.spider {
+  position: absolute;
+  display: inline-block;
+  top: -100%;
+  right: 14%;
+  /* 4. Animatie */
+  animation: swing 2s infinite;
+  transform-origin: top;
+  /* Bonus */
+  transition: 0.8s ease-in-out;
+}
+
+.spider .spiderweb {
+  width: 2px;
+  height: 200px;
+  margin-left: 49px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.spider .body {
+  width: 100px;
+  height: 90px;
+  background: linear-gradient(269deg, #b11313 1.77%, #df1f2d 99.15%);
+
+  position: relative;
+  border-radius: 50%;
+}
+
+.spider .body .eye {
+  width: 33px;
+  height: 33px;
+  position: absolute;
+  bottom: 20px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.spider .body .eye.left {
+  left: 15px;
+}
+
+.spider .body .eye.right {
+  right: 15px;
+}
+
+.spider .body .eye:after {
+  background: #000;
+  width: 7px;
+  height: 7px;
+  content: "";
+  display: block;
+  margin: 55%;
+  border-radius: 50%;
+
+  /* 3. Animatie */
+  animation: look 8s infinite;
+}
+
+.spider .legs .leg {
+  width: 80px;
+  height: 40px;
+  margin-top: -20px;
+  border: 5px solid transparent;
+  border-top-color: #2b3784;
+  border-radius: 40px 40px 0 0;
+}
+
+.spider .legs {
+  position: absolute;
+  bottom: -10%;
+  z-index: -1;
+}
+
+.spider .legs.left {
+  left: -70%;
+}
+.spider .legs.right {
+  right: -60%;
+}
+
+.legs.left .leg:nth-child(1) {
+  transform: rotate(10deg);
+
+  margin-left: 10px;
+}
+.legs.right .leg:nth-child(1) {
+  transform: rotate(-10deg);
+  margin-left: -10px;
+}
+
+.legs.left .leg:nth-child(2) {
+  transform: rotate(-20deg);
+  border-top-color: #df1f2d;
+  margin-left: 20px;
+}
+.legs.right .leg:nth-child(2) {
+  transform: rotate(20deg);
+  margin-left: -20px;
+}
+
+.legs.left .leg:nth-child(3) {
+  transform: rotate(-50deg);
+
+  margin-left: 30px;
+}
+.legs.right .leg:nth-child(3) {
+  transform: rotate(50deg);
+  margin-left: -30px;
+}
+
+/* 1. Animatie */
+@keyframes look {
+  0%,
+  40%,
+  100% {
+    transform: translateX(0);
+  }
+
+  45%,
+  95% {
+    transform: translateX(-110%);
+  }
+}
+
+/* 3. Animatie */
+@keyframes swing {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-40px);
+  }
+}
+
+/* TYPING ANIMATION */
+
+.chat-bubble {
+  background-color: #2b2b36;
+  padding: 16px 28px;
+  -webkit-border-radius: 20px;
+  -webkit-border-bottom-left-radius: 2px;
+  -moz-border-radius: 20px;
+  -moz-border-radius-bottomleft: 2px;
+  border-radius: 20px;
+  border-bottom-left-radius: 2px;
+  display: inline-block;
+}
+.typing {
+  align-items: center;
+  display: flex;
+  height: 17px;
+}
+.typing .dot {
+  animation: mercuryTypingAnimation 1.8s infinite ease-in-out;
+  background-color: #6cad96;
+  border-radius: 50%;
+  height: 7px;
+  margin-right: 4px;
+  vertical-align: middle;
+  width: 7px;
+  display: inline-block;
+}
+.typing .dot:nth-child(1) {
+  animation-delay: 200ms;
+}
+.typing .dot:nth-child(2) {
+  animation-delay: 300ms;
+}
+.typing .dot:nth-child(3) {
+  animation-delay: 400ms;
+}
+.typing .dot:last-child {
+  margin-right: 0;
+}
+
+@keyframes mercuryTypingAnimation {
+  0% {
+    transform: translateY(0px);
+    background-color: #6cad96;
+  }
+  28% {
+    transform: translateY(-7px);
+    background-color: #9ecab9;
+  }
+  44% {
+    transform: translateY(0px);
+    background-color: #b5d9cb;
+  }
+}
+
+/* message enter animation */
+
+.onEnterAnimation {
+  position: relative;
+  animation-name: example;
+  animation-duration: 0.8s;
+  animation-iteration-count: initial;
+}
+
+@keyframes example {
+  0% {
+    opacity: 0;
+    top: 30px;
+  }
+
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
